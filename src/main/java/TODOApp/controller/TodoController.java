@@ -1,6 +1,7 @@
 package TODOApp.controller;
 
 
+import TODOApp.dto.Priority;
 import TODOApp.dto.TaskCreateDto;
 import TODOApp.dto.TaskDto;
 import TODOApp.dto.TaskEditDto;
@@ -32,6 +33,7 @@ public class TodoController {
         TaskDto taskDto = new TaskDto(
                 ++tasksCount,
                 taskCreateDto.getName(),
+                taskCreateDto.getPriority(),
                 taskCreateDto.getText()
         );
         tasks.add(taskDto);
@@ -42,15 +44,10 @@ public class TodoController {
     public TaskDto editTask(@RequestBody TaskEditDto taskEditDto,
                             @PathVariable("id") Integer id) {
 
-        TaskDto taskDto = new TaskDto(
-                id,
-                taskEditDto.getName(),
-                taskEditDto.getText()
-        );
-
         TaskDto taskToBeUpdated = getTask(id);
 
         taskToBeUpdated.setName(taskEditDto.getName());
+        taskToBeUpdated.setPriority(taskEditDto.getPriority());
         taskToBeUpdated.setText(taskEditDto.getText());
         return taskToBeUpdated;
     }

@@ -7,9 +7,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
 
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+
+    implementation "org.springframework.boot:spring-boot-starter-jdbc:2.5.4"
+    implementation 'org.flywaydb:flyway-core:7.14.1'
+    runtimeOnly 'org.postgresql:postgresql:42.2.24'
 
     implementation("io.springfox:springfox-boot-starter:3.0.0")
 
