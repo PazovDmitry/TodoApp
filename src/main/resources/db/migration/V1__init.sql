@@ -14,8 +14,8 @@ create table task.task
 (
     id         serial primary key,
     title      varchar     not null,
-    text    priority,
-    priority      varchar,
+    text    varchar,
+    priority      priority,
     created_at timestamptz not null default now(),
     updated_at timestamptz not null default now(),
     creator_id int         not null
