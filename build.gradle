@@ -17,6 +17,8 @@ dependencies {
 
     implementation("io.springfox:springfox-boot-starter:3.0.0")
 
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
+
     annotationProcessor "org.projectlombok:lombok:1.18.20"
     compileOnly 'org.projectlombok:lombok:1.18.20'
 }

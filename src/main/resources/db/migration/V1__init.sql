@@ -6,16 +6,13 @@ create table task.user
     email      varchar     not null,
     created_at timestamptz not null default now()
 );
-create type priority as enum
-    ('LOW', 'MEDIUM', 'HIGH');
-
 
 create table task.task
 (
     id         serial primary key,
     title      varchar     not null,
     text    varchar,
-    priority      priority,
+    priority      varchar,
     created_at timestamptz not null default now(),
     updated_at timestamptz not null default now(),
     creator_id int         not null

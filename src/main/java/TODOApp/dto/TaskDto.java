@@ -7,11 +7,11 @@ public class TaskDto {
 
     private final Integer id;
 
-    private String name;
+    private final String name;
 
-    private Priority priority;
+    private final Priority priority;
 
-    private String text;
+    private final String text;
 
     public TaskDto(Integer id,
                    String name,
@@ -23,13 +23,4 @@ public class TaskDto {
         this.text = text;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPriority(Priority priority) { this.priority = priority; }
-
-    public void setText(String text) {
-        this.text = text;
-    }
 }

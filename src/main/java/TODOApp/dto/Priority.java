@@ -4,11 +4,11 @@ import lombok.Getter;
 
 @Getter
 public enum Priority {
-    LOW("Low"),
-    MEDIUM("Medium"),
-    HIGH("High");
+    LOW("LOW"),
+    MEDIUM("MEDIUM"),
+    HIGH("HIGH");
 
-    private String priority;
+    private final String priority;
 
     Priority(String priority) {
         this.priority = priority;
