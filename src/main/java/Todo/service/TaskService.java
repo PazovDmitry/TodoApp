@@ -1,9 +1,9 @@
 package Todo.service;
 
 
-import Todo.dto.TaskCreateDto;
-import Todo.dto.TaskDto;
-import Todo.dto.TaskEditDto;
+import Todo.dto.task.TaskCreateDto;
+import Todo.dto.task.TaskDto;
+import Todo.dto.task.TaskEditDto;
 
 import java.util.List;
 

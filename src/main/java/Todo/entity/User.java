@@ -5,10 +5,16 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
+@NamedEntityGraphs({
+        @NamedEntityGraph(name = "User.roles", attributeNodes = {
+                @NamedAttributeNode(value = "roles")
+        })
+})
 public class User {
 
     @Id
@@ -24,4 +30,13 @@ public class User {
 
     @CreationTimestamp
     private Instant createdAt;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Task> notes;
+
+    @ManyToMany
+    @JoinTable(name = "user_role",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private Set<Role> roles;
 }

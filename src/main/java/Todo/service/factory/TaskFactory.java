@@ -1,6 +1,6 @@
 package Todo.service.factory;
 
-import Todo.dto.Priority;
+import Todo.enums.Priority;
 import Todo.entity.Task;
 import org.springframework.stereotype.Component;
 

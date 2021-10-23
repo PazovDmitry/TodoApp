@@ -1,6 +1,6 @@
 package Todo.entity;
 
-import Todo.dto.Priority;
+import Todo.enums.Priority;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -33,7 +33,13 @@ public class Task {
     @UpdateTimestamp
     private Instant updatedAt;
 
+    @Column(name = "creator_id")
     private Integer creatorId;
+
+    @ManyToOne
+    @JoinColumn(name = "creator_id", insertable = false, updatable = false)
+    private User user;
+
 
     public Task() {
     }

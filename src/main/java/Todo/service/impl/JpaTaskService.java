@@ -1,8 +1,8 @@
 package Todo.service.impl;
 
-import Todo.dto.TaskCreateDto;
-import Todo.dto.TaskDto;
-import Todo.dto.TaskEditDto;
+import Todo.dto.task.TaskCreateDto;
+import Todo.dto.task.TaskDto;
+import Todo.dto.task.TaskEditDto;
 import Todo.entity.Task;
 import Todo.repository.TaskRepository;
 import Todo.repository.UserRepository;

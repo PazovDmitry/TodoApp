@@ -1,6 +1,6 @@
 package Todo.service.mapper;
 
-import Todo.dto.TaskDto;
+import Todo.dto.task.TaskDto;
 import Todo.entity.Task;
 import org.springframework.stereotype.Component;
 
