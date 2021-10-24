@@ -1,1 +1,0 @@
-alter table task.user add column password varchar not null default '';

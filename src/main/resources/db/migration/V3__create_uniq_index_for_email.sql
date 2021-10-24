@@ -1,1 +1,0 @@
-create unique index user_email_uniq_idx on task.user (email);
