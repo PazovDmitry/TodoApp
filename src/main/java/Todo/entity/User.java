@@ -28,6 +28,8 @@ public class User {
 
     private String email;
 
+    private String password;
+
     @CreationTimestamp
     private Instant createdAt;
 
@@ -39,4 +41,17 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Role> roles;
+
+    public User (String firstName, String lastName, String email, String password, Set<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(){
+
+    }
+
 }

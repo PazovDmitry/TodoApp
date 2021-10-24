@@ -4,6 +4,7 @@ import Todo.annotation.Loggable;
 import Todo.dto.user.UserWithRolesDto;
 import Todo.dto.user.filter.UserFilterDto;
 import Todo.service.UserService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -20,6 +21,7 @@ public class UserController {
     }
 
     @Loggable
+    @PreAuthorize("hasRole('admin')")
     @PostMapping("/{email}/roles")
     public void editRoles(@PathVariable String email,
                           @RequestBody Collection<String> newRoleCodes) {
@@ -34,6 +36,7 @@ public class UserController {
     }
 
     @Loggable
+    @PreAuthorize("hasRole('admin')")
     @PostMapping
     public List<UserWithRolesDto> getUsers(@RequestBody Collection<UserFilterDto> filters) {
         return userService.getUsers(filters);
@@ -46,6 +49,7 @@ public class UserController {
     }
 
     @Loggable
+    @PreAuthorize("hasRole('admin')")
     @DeleteMapping("/{id}")
     public List<UserWithRolesDto> deleteUser(@PathVariable("id") Integer userId){
         return userService.deleteUser(userId);

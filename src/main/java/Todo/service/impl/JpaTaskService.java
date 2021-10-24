@@ -11,7 +11,6 @@ import Todo.service.context.UserContext;
 import Todo.service.factory.TaskFactory;
 import Todo.service.mapper.TaskMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -53,7 +52,7 @@ public class JpaTaskService implements TaskService {
     }
 
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional
     @Override
     public TaskDto createTask(TaskCreateDto taskCreateDto){
             String email = userContext.getEmail();
@@ -71,7 +70,7 @@ public class JpaTaskService implements TaskService {
     }
 
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional
     @Override
     public TaskDto editTask (Integer taskId, TaskEditDto taskEditDto){
         Task task = taskRepository.findById(taskId).orElseThrow();
@@ -85,7 +84,7 @@ public class JpaTaskService implements TaskService {
         return taskMapper.mapTaskToTaskDto(task);
     }
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional
     @Override
     public List<TaskDto> delete (Integer id){
 
